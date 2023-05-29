@@ -10,11 +10,11 @@
  */
 
 class LemonadeChange {
-    public boolean lemonadeChange(int[] bills) {
+    public boolean lemonadeChange(int[] theBills) {
         int count5 = 0;  // count of $5 bills in hand
         int count10 = 0; // count of $10 bills in hand
 
-        for (int bill : bills) {
+        for (int bill : theBills) {
             if (bill == 5)
                 count5++;
             else if (bill == 10) {
