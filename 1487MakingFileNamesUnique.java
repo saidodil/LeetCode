@@ -8,7 +8,7 @@
  * Return an array of strings of length n where ans[i] is the actual name the system will assign to the ith folder when you create it.
  */
 
-class Solution {
+class 1487MakingFileNamesUnique {
  public String[] getFolderNames(String[] theNames) {
         Map<String, Integer> m = new HashMap<>();
         for (int i = 0; i < theNames.length; i++) {
