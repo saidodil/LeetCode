@@ -1,5 +1,5 @@
 /**
- * DESCRIPTION
+ * 1487. Making File Names Unique
  * 
  * Given an array of strings names of size n.
  * You will create n folders in your file system such that, at the ith minute, you will create a folder with the name theNames[i].
@@ -8,7 +8,7 @@
  * Return an array of strings of length n where ans[i] is the actual name the system will assign to the ith folder when you create it.
  */
 
-class 1487MakingFileNamesUnique {
+class MakingFileNamesUnique {
  public String[] getFolderNames(String[] theNames) {
         Map<String, Integer> m = new HashMap<>();
         for (int i = 0; i < theNames.length; i++) {
