@@ -20,7 +20,6 @@ class ProductOfArrayExceptSelf {
         suffix[n - 1] = 1;
         for (int i = n - 2; i >= 0; i--)
             suffix[i] = suffix[i + 1] * theNums[i + 1];
-
         for (int i = 0; i < n; i++)
             answer[i] = prefix[i] * suffix[i];
 
