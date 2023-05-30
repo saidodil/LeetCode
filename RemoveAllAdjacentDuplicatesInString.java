@@ -9,19 +9,19 @@
  */
 
 class RemoveAllAdjacentDuplicatesInString {
-  public String removeDuplicates(String theS) {
-      Stack<Character> stack = new Stack<>();
+    public String removeDuplicates(String theS) {
+        Stack<Character> stack = new Stack<>();
 
-      for (char c : theS.toCharArray()) {
-          if (!stack.isEmpty() && stack.peek() == c)
-              stack.pop();
-          else
-              stack.push(c);
-      }
+        for (char c : theS.toCharArray()) {
+            if (!stack.isEmpty() && stack.peek() == c)
+                stack.pop();
+            else
+                stack.push(c);
+        }
 
-      StringBuilder sb = new StringBuilder();
-      for (char c : stack)
-          sb.append(c);
-      return sb.toString();
-  }
+        StringBuilder sb = new StringBuilder();
+        for (char c : stack)
+            sb.append(c);
+        return sb.toString();
+    }
 }
