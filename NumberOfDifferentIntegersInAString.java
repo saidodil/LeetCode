@@ -10,29 +10,28 @@
  */
 
 class NumberOfDifferentIntegersInAString {
-  public int numDifferentIntegers(String theWord) {
-      Set<String> distinctIntegers = new HashSet<>();
-      StringBuilder currentInteger = new StringBuilder();
+    public int numDifferentIntegers(String theWord) {
+        Set<String> distinctIntegers = new HashSet<>();
+        StringBuilder currentInteger = new StringBuilder();
 
-      for (char ch : theWord.toCharArray()) {
-          if (Character.isDigit(ch))
-              currentInteger.append(ch);
-          else if (currentInteger.length() > 0) {
-              distinctIntegers.add(removeLeadingZeros(currentInteger));
-              currentInteger.setLength(0);
-          }
-      }
+        for (char ch : theWord.toCharArray()) {
+            if (Character.isDigit(ch))
+                currentInteger.append(ch);
+            else if (currentInteger.length() > 0) {
+                distinctIntegers.add(removeLeadingZeros(currentInteger));
+                currentInteger.setLength(0);
+            }
+        }
+        // Process the last integer if it exists
+        if (currentInteger.length() > 0)
+            distinctIntegers.add(removeLeadingZeros(currentInteger));
+        return distinctIntegers.size();
+    }
 
-      // Process the last integer if it exists
-      if (currentInteger.length() > 0)
-          distinctIntegers.add(removeLeadingZeros(currentInteger));
-      return distinctIntegers.size();
-  }
-
-  private String removeLeadingZeros(StringBuilder theNum) {
-      int start = 0;
-      while (start < theNum.length() - 1 && theNum.charAt(start) == '0')
-          start++;
-      return theNum.substring(start);
-  }
+    private String removeLeadingZeros(StringBuilder theNum) {
+        int start = 0;
+        while (start < theNum.length() - 1 && theNum.charAt(start) == '0')
+            start++;
+        return theNum.substring(start);
+    }
 }
