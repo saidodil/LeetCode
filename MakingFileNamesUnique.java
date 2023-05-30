@@ -9,18 +9,18 @@
  */
 
 class MakingFileNamesUnique {
- public String[] getFolderNames(String[] theNames) {
-        Map<String, Integer> m = new HashMap<>();
-        for (int i = 0; i < theNames.length; i++) {
-            if (m.containsKey(theNames[i])) {
-                int k = m.get(theNames[i]);
-                while (m.containsKey(theNames[i] + "(" + k + ")"))
-                    k++;
-                m.put(theNames[i], k + 1);
-                theNames[i] = theNames[i] + "(" + k + ")";
-            }
-            m.put(theNames[i], 1);
-        }
-        return theNames;
-    }
+  public String[] getFolderNames(String[] theNames) {
+         Map<String, Integer> m = new HashMap<>();
+         for (int i = 0; i < theNames.length; i++) {
+             if (m.containsKey(theNames[i])) {
+                 int k = m.get(theNames[i]);
+                 while (m.containsKey(theNames[i] + "(" + k + ")"))
+                     k++;
+                 m.put(theNames[i], k + 1);
+                 theNames[i] = theNames[i] + "(" + k + ")";
+             }
+             m.put(theNames[i], 1);
+         }
+         return theNames;
+     }
 }
