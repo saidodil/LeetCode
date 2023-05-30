@@ -23,7 +23,8 @@ class LemonadeChange {
                     count10++;
                 } else
                     return false;
-            } else { // bill == 20
+            // bill == 20
+            } else { 
                 if (count10 > 0 && count5 > 0) {
                     count10--;
                     count5--;
@@ -33,7 +34,6 @@ class LemonadeChange {
                     return false;
             }
         }
-
         return true;
     }
 }
