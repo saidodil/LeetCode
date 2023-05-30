@@ -13,30 +13,30 @@
  */
 
 class StringCompression {
-  public int compress(char[] theChars) {
-      StringBuilder s = new StringBuilder();
-      s.append(theChars[0]);
-      int counter = 1;
-      if (theChars.length > 1) {
-          for (int i = 1; i < theChars.length; i++) {
-              //1-letter case
-              if (theChars[i] == theChars[i - 1]) {
-                  if (i == theChars.length - 1)
-                      s.append(++counter);
-                  else
-                      counter++;
-              } else {
-                  if (counter > 1) {
-                      s.append(counter);
-                      s.append(theChars[i]);
-                  } else
-                      s.append(theChars[i]);
-                  counter = 1;
-              }
-          }
-          for (int i = 0; i < s.length(); i++)
-              theChars[i] = s.charAt(i);
-      }
-      return s.length();
-  }
+    public int compress(char[] theChars) {
+        StringBuilder s = new StringBuilder();
+        s.append(theChars[0]);
+        int counter = 1;
+        if (theChars.length > 1) {
+            for (int i = 1; i < theChars.length; i++) {
+                //1-letter case
+                if (theChars[i] == theChars[i - 1]) {
+                    if (i == theChars.length - 1)
+                        s.append(++counter);
+                    else
+                        counter++;
+                } else {
+                    if (counter > 1) {
+                        s.append(counter);
+                        s.append(theChars[i]);
+                    } else
+                        s.append(theChars[i]);
+                    counter = 1;
+                }
+            }
+            for (int i = 0; i < s.length(); i++)
+                theChars[i] = s.charAt(i);
+        }
+        return s.length();
+    }
 }
