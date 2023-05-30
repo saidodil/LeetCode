@@ -6,20 +6,20 @@
  */
 
 class MaximumDifferenceBetweenIncreasingElements {
-  public int maximumDifference(int[] theNums) {
-      int n = theNums.length;
-      int maxDiff = -1;
-      int i = 0, j = 1;
+    public int maximumDifference(int[] theNums) {
+        int n = theNums.length;
+        int maxDiff = -1;
+        int i = 0, j = 1;
 
-      while (j < n) {
-          if (theNums[i] < theNums[j]) {
-              maxDiff = Math.max(maxDiff, theNums[j] - theNums[i]);
-              j++;
-          } else {
-              i = j;
-              j++;
-          }
-      }
-      return maxDiff;
-  }
+        while (j < n) {
+            if (theNums[i] < theNums[j]) {
+                maxDiff = Math.max(maxDiff, theNums[j] - theNums[i]);
+                j++;
+            } else {
+                i = j;
+                j++;
+            }
+        }
+        return maxDiff;
+    }
 }
