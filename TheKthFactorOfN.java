@@ -7,27 +7,26 @@
  */
 
 class TheKthFactorOfN {
-  public int kthFactor(int n, int k) {
-      int count = 0;
-      for (int i = 1; i * i <= n; i++) {
-          if (n % i == 0) {
-              count++;
-              if (count == k)
-                  return i;
-          }
-      }
-
-      // If n is a perfect square, don't count the square root twice.
-      if ((int) Math.sqrt(n) * (int) Math.sqrt(n) == n)
-          count--;
-      // Check the second half of factors.
-      for (int i = (int) Math.sqrt(n); i >= 1; i--) {
-          if (n % i == 0) {
-              count++;
-              if (count == k)
-                  return n / i;
-          }
-      }
-      return -1;
-  }
+    public int kthFactor(int theN, int theK) {
+        int count = 0;
+        for (int i = 1; i * i <= theN; i++) {
+            if (theN % i == 0) {
+                count++;
+                if (count == theK)
+                    return i;
+            }
+        }
+        // If n is a perfect square, don't count the square root twice.
+        if ((int) Math.sqrt(theN) * (int) Math.sqrt(theN) == theN)
+            count--;
+        // Check the second half of factors.
+        for (int i = (int) Math.sqrt(theN); i >= 1; i--) {
+            if (theN % i == 0) {
+                count++;
+                if (count == theK)
+                    return theN / i;
+            }
+        }
+        return -1;
+    }
 }
